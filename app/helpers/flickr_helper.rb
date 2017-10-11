@@ -1,10 +1,10 @@
 module FlickrHelper
   def user_photos(user_id, photo_count)
-    flickr.photos.search(:user_id => user_id).first(photo_count)
+    flickr.photos.search(:tags => user_id, :license => 9).first(photo_count)
   end
 
   def user_photo_count(user_id)
-    flickr.photos.search(:user_id => user_id).count
+    flickr.photos.search(:tags => user_id, :license => 9).count
   end
 
   def render_flickr_sidebar_widget(user_id, columns = 2)

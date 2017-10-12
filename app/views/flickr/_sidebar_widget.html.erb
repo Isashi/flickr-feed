@@ -4,7 +4,7 @@
       <li>
         <% row.each do |p| %>
         	<% if p %>
-          <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'flickr_photo', :title => p.title, :border => 0, :size => '150x150'), FlickRaw.url_photopage(p)) %>
+          <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'flickr_photo', :title => p.title, :border => 0, :size => '150x150'), FlickRaw.url_b(p)) %>
           <% end %>
         <% end %>
       </li>

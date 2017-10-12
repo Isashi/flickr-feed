@@ -1,3 +1,12 @@
-<% cache ("flickr-sidebar") do %>
-  <%= render_flickr_sidebar_widget('sun') %>
+<%= form_tag('/', method: :get) do %>
+  <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag" %>
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+<% if params[:tag].nil? %>
+	<p>Search something!</p>
+<% else %>
+	<% cache ("flickr-sidebar") do %>
+  	<%= render_flickr_sidebar_widget(params[:tag]) %>
+	<% end %>
 <% end %>

@@ -21,7 +21,7 @@ module FlickrHelper
   def render_recent
     begin
       license = "7,9,10"
-      photos = flickr.photos.search(:safe_search => 1).first(100).in_groups_of(4)
+      photos = flickr.photos.search(:license => license).first(100).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos}
     rescue => exception

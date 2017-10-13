@@ -12,6 +12,12 @@
   	<option value="interestingness-desc">Most interesting</option>
 	</select>
 
+	<select name="safety" multiple>
+  	<option value="1" selected="true">Safe</option>
+  	<option value="2">Moderate</option>
+  	<option value="3">ZOMG porn</option>
+	</select>
+
   <%= submit_tag "Search", name: nil %>
 <% end %>
 
@@ -22,6 +28,6 @@
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort]) %>
+  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort], params[:safety]) %>
 	<% end %>
 <% end %>

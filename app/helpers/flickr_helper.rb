@@ -1,16 +1,16 @@
 module FlickrHelper
-  def user_photos(user_id, license, sort, photo_count)
-    flickr.photos.search(:tags => user_id, :license => license, :sort => sort).first(photo_count)
+  def user_photos(user_id, license, sort, safety, photo_count)
+    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safety).first(photo_count)
   end
 
-  def user_photo_count(user_id, license, sort)
-    flickr.photos.search(:tags => user_id, :license => license, :sort => sort).count
+  def user_photo_count(user_id, license, sort, safety)
+    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safety).count
   end
 
-  def render_flickr_sidebar_widget(user_id, license, sort, columns = 2)
+  def render_flickr_sidebar_widget(user_id, license, sort, safety, columns = 2)
     begin
-      photo_count = [user_photo_count(user_id, license, sort),100].min
-      photos = user_photos(user_id, license, sort, photo_count).in_groups_of(4)
+      photo_count = [user_photo_count(user_id, license, sort, safety),100].min
+      photos = user_photos(user_id, license, sort, safety, photo_count).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos }
     rescue => exception
@@ -21,7 +21,7 @@ module FlickrHelper
   def render_recent
     begin
       license = "7,9,10"
-      photos = flickr.photos.search(:license => license).first(100).in_groups_of(4)
+      photos = flickr.photos.search(:safe_search => 1).first(100).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos}
     rescue => exception

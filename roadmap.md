@@ -1,7 +1,7 @@
 TO-DO LIST:
 
 BACKEND
-* Add filters for licenses
+✅ Add filters for licenses
 * Improve search for multiple tags
 * Improve search results ordering
 * Add multiple choice for sort (https://www.flickr.com/services/api/flickr.photos.search.html)

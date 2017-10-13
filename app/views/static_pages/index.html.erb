@@ -1,5 +1,11 @@
 <%= form_tag('/', method: :get) do %>
   <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag" %>
+
+  <select name="license" multiple>
+  	<option value="7,9,10" selected="true">Free</option>
+  	<option value="1,2">Not Free</option>
+	</select>
+
   <%= submit_tag "Search", name: nil %>
 <% end %>
 
@@ -10,6 +16,6 @@
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_flickr_sidebar_widget(params[:tag]) %>
+  	<%= render_flickr_sidebar_widget(params[:tag], params[:license]) %>
 	<% end %>
 <% end %>

@@ -1,16 +1,16 @@
 module FlickrHelper
-  def user_photos(user_id, photo_count)
-    flickr.photos.search(:tags => user_id, :license => 9).first(photo_count)
+  def user_photos(user_id, license, photo_count)
+    flickr.photos.search(:tags => user_id, :license => license).first(photo_count)
   end
 
-  def user_photo_count(user_id)
-    flickr.photos.search(:tags => user_id, :license => 9).count
+  def user_photo_count(user_id, license)
+    flickr.photos.search(:tags => user_id, :license => license).count
   end
 
-  def render_flickr_sidebar_widget(user_id, columns = 2)
+  def render_flickr_sidebar_widget(user_id, license, columns = 2)
     begin
-      photo_count = [user_photo_count(user_id),100].min
-      photos = user_photos(user_id, photo_count).in_groups_of(4)
+      photo_count = [user_photo_count(user_id, license),100].min
+      photos = user_photos(user_id, license, photo_count).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos }
     rescue => exception
@@ -20,9 +20,10 @@ module FlickrHelper
 
   def render_recent
     begin
-      photos = flickr.photos.search(:license => "7,9,10").first(100).in_groups_of(4)
+      license = "7,9,10"
+      photos = flickr.photos.search(:license => license).first(100).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
-              :locals => { :photos => photos }
+              :locals => { :photos => photos}
     rescue => exception
       render :partial => '/flickr/unavailable'
     end

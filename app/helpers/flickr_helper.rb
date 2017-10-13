@@ -17,5 +17,15 @@ module FlickrHelper
       render :partial => '/flickr/unavailable'
     end
   end
+
+  def render_recent
+    begin
+      photos = flickr.photos.search(:license => "7,9,10").first(100).in_groups_of(4)
+      render  :partial => '/flickr/sidebar_widget', 
+              :locals => { :photos => photos }
+    rescue => exception
+      render :partial => '/flickr/unavailable'
+    end
+  end
 end
 

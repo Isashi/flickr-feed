@@ -6,6 +6,12 @@
   	<option value="1,2">Not Free</option>
 	</select>
 
+	<select name="sort" multiple>
+  	<option value="relevance" selected="true">Most relevant</option>
+  	<option value="date-post-desc">Most recent</option>
+  	<option value="interestingness-desc">Most interesting</option>
+	</select>
+
   <%= submit_tag "Search", name: nil %>
 <% end %>
 
@@ -16,6 +22,6 @@
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_flickr_sidebar_widget(params[:tag], params[:license]) %>
+  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort]) %>
 	<% end %>
 <% end %>

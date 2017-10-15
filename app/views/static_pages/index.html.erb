@@ -12,7 +12,7 @@
   	<option value="interestingness-desc">Most interesting</option>
 	</select>
 
-	<select name="safety" multiple>
+	<select name="safe_search" multiple>
   	<option value="1" selected="true">Safe</option>
   	<option value="2">Moderate</option>
   	<option value="3">Restricted</option>
@@ -28,6 +28,6 @@
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort], params[:safety]) %>
+  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort], params[:safe_search]) %>
 	<% end %>
 <% end %>

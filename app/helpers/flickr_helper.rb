@@ -1,16 +1,16 @@
 module FlickrHelper
-  def user_photos(user_id, license, sort, safety, photo_count)
-    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safety).first(photo_count)
+  def user_photos(user_id, license, sort, safe_search, photo_count)
+    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safe_search).first(photo_count)
   end
 
-  def user_photo_count(user_id, license, sort, safety)
-    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safety).count
+  def user_photo_count(user_id, license, sort, safe_search)
+    flickr.photos.search(:text => user_id, :license => license, :sort => sort, :safe_search => safe_search).count
   end
 
-  def render_flickr_sidebar_widget(user_id, license, sort, safety, columns = 2)
+  def render_flickr_sidebar_widget(user_id, license, sort, safe_search, columns = 2)
     begin
-      photo_count = [user_photo_count(user_id, license, sort, safety),100].min
-      photos = user_photos(user_id, license, sort, safety, photo_count).in_groups_of(4)
+      photo_count = [user_photo_count(user_id, license, sort, safe_search),100].min
+      photos = user_photos(user_id, license, sort, safe_search, photo_count).in_groups_of(4)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos }
     rescue => exception

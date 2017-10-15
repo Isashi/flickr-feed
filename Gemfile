@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'flickraw'
 gem 'figaro'
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

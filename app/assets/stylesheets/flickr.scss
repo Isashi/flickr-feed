@@ -17,6 +17,7 @@
         height: 150px;
         padding: 13px 60px 90px 10px;
         margin: 200;
-        background: #fff url(/assets/polaroidframe.png) no-repeat;
+        background: #fff no-repeat;
+        background-image: url(/assets/polaroidframe.png);
         z-index:0;
 }

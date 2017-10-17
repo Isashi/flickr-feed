@@ -41,7 +41,7 @@ Base URL is all above params (minus `api_sig`) in alphabetical order
 then url_encoded. Create MD5 from base_url to use in API call
 
 ```
-base_url = 'POSThttps://api.flickr.com/services/rest/&auth_token=72157686242865152-b7eede230e80b998&api_key=aaee9cddc0e152ae0fc09f87763c828a&format=json&method=flickr.photos.search&nojsoncallback=1&safe_search=3'
+base_url = 'POSThttps://api.flickr.com/services/rest/&auth_token=72157686242865152-b7eede230e80b888&api_key=aaee9cddc0e152ae0fc09f87763c999b&format=json&method=flickr.photos.search&nojsoncallback=1&safe_search=3'
 encoded_url = URI.encode_www_form_component(base_url)
 
 args = {}

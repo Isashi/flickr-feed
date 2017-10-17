@@ -1,5 +1,7 @@
-<%= "User nil? #{@user.nil?}" %>
-<%= @user.inspect if !(@user.nil?) %>
+<%= "User: #{@user.inspect}" %>
+<br />
+<%= link_to "Log In", authorize_path %>
+
 <%= form_tag('/', method: :get) do %>
   <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag" %>
 

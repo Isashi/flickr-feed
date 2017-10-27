@@ -1,25 +1,4 @@
-<%= form_tag('/', method: :get) do %>
-  <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag" %>
 
-  <select name="license" multiple>
-  	<option value="7,9,10" selected="true">Free</option>
-  	<option value="1,2">Not Free</option>
-	</select>
-
-	<select name="sort" multiple>
-  	<option value="relevance" selected="true">Most relevant</option>
-  	<option value="date-post-desc">Most recent</option>
-  	<option value="interestingness-desc">Most interesting</option>
-	</select>
-
-	<select name="safe_search" multiple>
-  	<option value="1" selected="true">Safe</option>
-  	<option value="2">Moderate</option>
-  	<option value="3">Restricted</option>
-	</select>
-
-  <%= submit_tag "Search", name: nil %>
-<% end %>
 
 <% if params[:tag].nil? %>
 	<p>Most recent images:</p>

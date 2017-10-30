@@ -1,14 +1,11 @@
-<div class="flickr">
-  <ul>
-    <% photos.each do |row| %>
-      <li>
-        <% row.each do |p| %>
+<div class="row text-center text-lg-left">
+    <% photos.each do |p| %>
         	<% if p %>
-            <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'flickr_photo', :title => p.title, :border => 0, :size => '150x150'), FlickRaw.url_photopage(p)) %>
-            <a href=<%=FlickRaw.url_b(p)%> download><%= image_tag("/assets/download.png") %></a>
+          	<div class="col-lg-2 col-md-3 col-xs-6">
+              <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'img-fluid img-thumbnail', :title => p.title, :border => 0, :size => '200x200'), FlickRaw.url_photopage(p)) %>
+              </br>
+              <a href=<%=FlickRaw.url_b(p)%> download><%= image_tag("/assets/download.png") %></a>
+            </div>
           <% end %>
         <% end %>
-      </li>
-    <% end %>
-  </ul>
 </div>

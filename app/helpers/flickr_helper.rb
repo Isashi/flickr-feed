@@ -10,7 +10,7 @@ module FlickrHelper
   def render_flickr_sidebar_widget(user_id, license, sort, safe_search, columns = 2)
     begin
       photo_count = [user_photo_count(user_id, license, sort, safe_search),100].min
-      photos = user_photos(user_id, license, sort, safe_search, photo_count).in_groups_of(4)
+      photos = user_photos(user_id, license, sort, safe_search, photo_count)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos }
     rescue => exception
@@ -21,7 +21,7 @@ module FlickrHelper
   def render_recent
     begin
       license = "7,9,10"
-      photos = flickr.photos.search(:license => license).first(100).in_groups_of(4)
+      photos = flickr.photos.search(:license => license).first(100)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos}
     rescue => exception

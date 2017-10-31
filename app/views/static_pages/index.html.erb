@@ -1,7 +1,4 @@
-
-
 <% if params[:tag].nil? %>
-	<p>Most recent images:</p>
 	<% cache ("flickr-sidebar") do %>
   	<%= render_recent %>
 	<% end %>

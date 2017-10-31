@@ -8,14 +8,14 @@
     </button>
     
     
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
           <a class="nav-link" href="#">FlickrFeed <span class="sr-only">(current)</span></a>
-        </li>
-      </ul>
+      </li>
+    </ul>
   
-  
+  <ul class="nav navbar-nav navbar-right">
     <li class="nav-item">
       <%= form_tag('/', method: :get, class:"form-inline my-2 my-lg-0") do %>
       <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag", class: "form-control mr-sm-2" %>
@@ -27,7 +27,6 @@
         	<option value="1,2">Not Free</option>
       	</select>
     </li>
-    
     <li class="nav-item">
       	<select class="form-control" name="sort">
         	<option value="relevance" selected="true">Most relevant</option>
@@ -44,10 +43,10 @@
       	</select>
     </li>  
     
-    <%= submit_tag "Search", name: nil, class: "btn btn-outline-success my-2 my-sm-0" %>
-    
+    <%= submit_tag "Search", name: nil, class: "btn btn-outline-success my-2 my-lg-0" %>
     <% end %>
-  
+    </ul>
     </div>
+    </ul>
   </div>
 </nav>

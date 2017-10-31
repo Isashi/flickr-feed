@@ -1,9 +1,11 @@
 <% if params[:tag].nil? %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_recent %>
+		<h1 class="my-4 text-center text-lg-left">Most recent images</h1>
+	  	<%= render_recent %>
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>
-  	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort], params[:safe_search]) %>
+        <h1 class="my-4 text-center text-lg-left">Images with tag: "<%= params[:tag]%>" </h1>
+	 	<%= render_flickr_sidebar_widget(params[:tag], params[:license], params[:sort], params[:safe_search]) %>
 	<% end %>
 <% end %>

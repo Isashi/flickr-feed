@@ -1,0 +1,10 @@
+<div class="row text-center text-lg-left">
+    <% photos.each do |p| %>
+    	<% if p %>
+          	<div class="col-lg-2 col-md-3 col-xs-6 polaroid-images">
+                <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'polaroid images', :title => p.title, :border => 0, :size => '150x150'), FlickRaw.url_photopage(p)) %>
+                <a href=<%=FlickRaw.url_b(p)%> download><%= image_tag("/assets/download.png") %></a>
+            </div>
+        <% end %>
+    <% end %>
+</div>

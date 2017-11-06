@@ -1,9 +1,8 @@
-<div class="prova row text-center text-lg-left polaroid-images">
+<div class="polaroid-images">
     <% photos.each do |p| %>
     	<% if p %>
-          	<div class="col-lg-2 col-md-3 col-xs-6">
                 <%= link_to(image_tag(FlickRaw.url_q(p), :class => 'polaroid images', :title => p.title, :border => 0, :size => '150x150'), FlickRaw.url_photopage(p), :title => ([p.title,p.title[0..10]+"..."].min_by {|x| x.length })) %>
-            </div>
+
         <% end %>
     <% end %>
 </div>

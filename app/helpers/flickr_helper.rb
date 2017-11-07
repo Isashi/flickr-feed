@@ -18,10 +18,11 @@ module FlickrHelper
     end
   end
 
-  def render_recent
+  def render_popular
     begin
-      license = "7,9,10"
-      photos = flickr.photos.search(:license => license).first(100)
+      license = "1,2,3,4,5,6,7,9,10"
+      sort = "interestingness-desc"
+      photos = flickr.photos.search(:license => license, :sort => sort).first(100)
       render  :partial => '/flickr/sidebar_widget', 
               :locals => { :photos => photos}
     rescue => exception

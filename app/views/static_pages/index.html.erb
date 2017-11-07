@@ -1,7 +1,7 @@
 <% if params[:tag].nil? %>
 	<% cache ("flickr-sidebar") do %>
-		<h1 class="my-4 text-center text-lg-left">Most recent images</h1>
-	  	<%= render_recent %>
+		<h1 class="my-4 text-center text-lg-left">Most interesting images</h1>
+	  	<%= render_popular %>
 	<% end %>
 <% else %>
 	<% cache ("flickr-sidebar") do %>

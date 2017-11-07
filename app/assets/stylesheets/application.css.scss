@@ -81,3 +81,33 @@ body {
     background: image-url('bbg.jpg');
     
 }
+
+.nav-item {
+	margin: 0 5px;
+}
+
+.form-control {
+    background-color: #444;
+    color: white;
+    border: none;
+}
+
+.form-control:hover, .form-control:focus, .dropdown-item:focus {
+    background-color: #272727;
+    color: #1e90ff;
+    border: none;
+}
+.btn-outline-succes {
+	border-color: #1e90ff;
+	background-color: transparent;
+	color: #1e90ff;
+}
+.btn-outline-succes:hover {
+	border-color: #1e90ff;
+	background-color: #1e90ff;
+	color: white;
+}
+.title h1 {
+	color: #1e90ff;
+	font-family: 'Pacifico', cursive;
+}

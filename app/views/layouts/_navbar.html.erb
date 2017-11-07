@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand" href="#">
-      <img src="/assets/multiplepolaroids.png" width="60" height="60" alt="">
+      <img src="/assets/logo.png" width="60" height="60" alt="">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,7 +11,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-          <a class="nav-link" href="#"><h1>FlickrFeed</h1><span class="sr-only">(current)</span></a>
+          <a class="nav-link title" href="#"><h1>FlickrFeed</h1><span class="sr-only">(current)</span></a>
       </li>
     </ul>
   
@@ -21,22 +21,22 @@
       <%= text_field_tag :tag, nil, placeholder: "Search photo by a tag", class: "form-control mr-sm-2" %>
     </li>
   
-    <li class="nav-item">
-        <select class="form-control" name="license">
-        	<option value="7,9,10" selected="true">Free</option>
-        	<option value="1,2">Not Free</option>
+    <li class="dropdown nav-item">
+        <select class="form-control btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="license">
+        	  <option value="7,9,10" selected="true">License free</option>
+        	  <option value="1,2">With copyright</option>
       	</select>
     </li>
-    
-    <li class="nav-item">
-      	<select class="form-control" name="sort">
+
+    <li class="dropdown nav-item">
+        <select class="form-control btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" name="sort">
         	<option value="relevance" selected="true">Most relevant</option>
         	<option value="date-post-desc">Most recent</option>
         	<option value="interestingness-desc">Most interesting</option>
       	</select>
     </li>  
     
-    <%= submit_tag "Search", name: nil, class: "btn btn-outline-success my-2 my-lg-0" %>
+    <%= submit_tag "Search", name: nil, class: "btn btn-outline-succes my-2 my-lg-0" %>
     <% end %>
     </ul>
     </div>

@@ -17,6 +17,5 @@ FRONTEND
 * Create a responsive layout for desktop and mobile
 * Add navbar with search form and multiple choice for licenses
 * Look for a icon and name for the project (top left)
-* Include link to github (top right)
-* 
+* Include link to github (footer)
 

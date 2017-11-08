@@ -37,6 +37,7 @@ gem 'jquery-rails'
 gem 'flickraw'
 gem 'figaro'
 gem 'will_paginate', '~> 3.1.0'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

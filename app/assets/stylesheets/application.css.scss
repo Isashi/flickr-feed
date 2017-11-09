@@ -42,19 +42,19 @@
 }
 .polaroid-images a:nth-child(3) { 
 	-webkit-transform: rotate(-24deg);  
-	-moz-transform: rotate(-24deg); 
-	transform: rotate(-24deg); 
+	   -moz-transform: rotate(-24deg); 
+   	        transform: rotate(-24deg); 
 }
 .polaroid-images a:nth-child(4n) { 
 	-webkit-transform: rotate(7deg);  
-	-moz-transform: rotate(7deg); 
-	transform: rotate(7deg); 
+	   -moz-transform: rotate(7deg); 
+	        transform: rotate(7deg); 
 }
 .polaroid-images a:nth-child(5n)
 {
 	-webkit-transform: rotate(14deg);  
-	-moz-transform: rotate(14deg); 
-	transform: rotate(14deg); 
+	   -moz-transform: rotate(14deg); 
+	        transform: rotate(14deg); 
 }
 .polaroid-images a:nth-child(7n)
 {
@@ -63,13 +63,13 @@
 	transform: rotate(-18deg); 
 }
 .polaroid-images a:hover{
+	z-index:1000; 
 	-webkit-transform: rotate(0deg); 
 	-moz-transform: rotate(0deg);
         transform: rotate(0deg);
 	-webkit-transform: scale(1.5); 
 	-moz-transform: scale(1.5);
         transform: scale(1.5);
-	z-index:10;
 	-webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, .7);
 	-moz-box-shadow: 0 10px 20px rgba(0,0,0,.7);
         box-shadow: 0 10px 20px rgba(0,0,0,.7);
@@ -121,6 +121,14 @@ body {
 .text-blue {
 	color: #1e90ff;
 }
-footer {
-        display: inline;
+.footer {
+	clear: left;
+	background-color: red;
+    display: inline;
+}
+
+.prova2 {
+	padding: 4% 2% 4% 2%;
+	overflow: hidden;
+	width: 100%;
 }

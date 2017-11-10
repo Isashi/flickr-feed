@@ -115,13 +115,12 @@ body {
 	color: #1e90ff;
 }
 .footer {
-	clear: left;
-	background-color: red;
+  background-color: #272727;
   display: block;
 }
 ul {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   grid-gap: 10px;
   padding-bottom: 20px;
 }
@@ -130,10 +129,14 @@ ul {
   overflow: hidden;
   opacity: 1;
   height: 285px;
+  max-width: 185px;
   list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
 	font-family: 'Pacifico', serif;
 	font-size: 1px;  
+}
+.author {
+	float: right;
 }

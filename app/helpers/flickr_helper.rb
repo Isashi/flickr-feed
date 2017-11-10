@@ -29,5 +29,13 @@ module FlickrHelper
       render :partial => '/flickr/unavailable'
     end
   end
+  
+  def title(titles)
+    if titles == "" then title = "blank" elsif
+      titles.length < 20 then title = titles elsif
+        titles[0..25].match(" ") then title = ([titles,titles[0..25]+".."].min_by {|x| x.length }) else
+       title = titles[0..13]+".."
+    end
+  end
 end
 

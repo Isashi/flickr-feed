@@ -51,7 +51,7 @@
 	   -moz-transform: rotate(7deg); 
 	        transform: rotate(7deg); 
 }
-.frame:nth-child(5n)
+.frame:nth-child(6n)
 {
 	-webkit-transform: rotate(14deg);  
 	   -moz-transform: rotate(14deg); 
@@ -119,24 +119,21 @@ body {
 	background-color: red;
   display: block;
 }
-.prova2 {
-	padding: 4% 2% 4% 2%;
-	overflow: hidden;
-	width: 100%;
-}
 ul {
-  padding-top: 200px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
   grid-gap: 10px;
-  padding: 0;
+  padding-bottom: 20px;
 }
 .frame {
+	padding-top: 20%;
   overflow: hidden;
   opacity: 1;
-  height: 235px;
+  height: 285px;
   list-style-type: none;
   display: flex;
   justify-content: center;
   align-items: center;
+	font-family: 'Pacifico', serif;
+	font-size: 1px;  
 }
